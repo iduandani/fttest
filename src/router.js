@@ -14,8 +14,8 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      meta:{
-        keepAlive:true
+      meta: {
+        keepAlive: true
       },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
@@ -25,8 +25,8 @@ export default new Router({
     {
       path: '/other',
       name: 'other',
-      meta:{
-        keepAlive:true
+      meta: {
+        keepAlive: true
       },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route

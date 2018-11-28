@@ -74,6 +74,11 @@ export default {
       ],
       model7: ''
     };
-  }
+  },
+  mounted() {
+      var a = this.a.b
+      a = a + 1
+      window.name = a
+  },
 };
 </script>

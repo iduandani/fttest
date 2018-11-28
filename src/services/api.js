@@ -3,7 +3,7 @@ const apiTest  = function(){
     return new Promise((resolve)=>{
         //console.log(http)
         resolve({
-            name:'test'
+            name: 'test'
         })
     })
 }

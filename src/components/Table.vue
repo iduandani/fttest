@@ -6,7 +6,7 @@
 </template>
 <script>
 export default {
-    name:"HqhlTable",
+    name: 'HqhlTable',
     data(){
         return {
             columns1: [
@@ -22,8 +22,8 @@ export default {
                         title: 'Address',
                         key: 'address'
                     },{
-                        title:'数量',
-                        render:(h) => {
+                        title: '数量',
+                        render: (h) => {
                             return h('div', [
                                 h('Input', {
                                     props: {
