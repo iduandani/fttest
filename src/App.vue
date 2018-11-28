@@ -2,14 +2,22 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/other">Other</router-link>
     </div>
-    <router-view/>
+    <keep-alive>
+        <router-view v-if="$route.meta.keepAlive">
+
+        </router-view>
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive">
+
+    </router-view>
   </div>
 </template>
 
 <style lang="scss">
-#app {
+#app nav {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,5 +1,5 @@
 import Axios from 'axios'
 
-let instence = new Axios()
+let instence = Axios.create({})
 
 export default instence
