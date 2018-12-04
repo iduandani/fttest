@@ -12,6 +12,7 @@ export default {
   components: {
     HqhlTable
   },
+
   mounted() {
     apiTest().then(res=>{
       console.log(res)

@@ -1,2 +1,25 @@
-$m-font:16px;
-$b-font:14px;
+//字体大小
+$fz-title:16px; // 标题字体
+$fz-nav:14px; // 导航字体
+$fz-content:12px; // 内容字体
+$fz-modal-btn:16px;
+// 间隔
+$gap-xwide:30px;
+$gap-wide:20px;
+$gap-normal:15px;
+$gap-thin:10px;
+$gap-xthin:5px;
+
+//特定高度
+$height-header:55px;
+
+//颜色
+$color-main:#169cd4;
+$color-bg-main:#fff;
+$color-fz-main:#000;
+$color-fz-light:#fff;
+$color-nav-light:#0d9fcd;
+$color-btn-sure:#0D9ECE;
+$color-modal-title:#EAEEEF;
+$color-tab-active:#0D9ECE;
+

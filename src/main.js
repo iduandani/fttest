@@ -3,30 +3,37 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import 'iview/dist/styles/iview.css';
-import 'normalize.css'
 
+import 'normalize.css'
+import 'iview/dist/styles/iview.css';
+import '@/style/cover.scss'
 import '@/utils'
 import {
   Button,
   Table,
   Input,
   Page,
+  Icon,
   Select,
+  Switch,
   Option,
-  OptionGroup
+  OptionGroup,
+  Modal
 } from 'iview';
 Vue.component('Button', Button);
 Vue.component('Table', Table);
 Vue.component('Input', Input);
 Vue.component('Page', Page);
+Vue.component('Icon', Icon);
 Vue.component('Select', Select);
+Vue.component('i-switch', Switch);
 Vue.component('Option', Option);
 Vue.component('OptionGroup', OptionGroup);
+Vue.component('Modal', Modal)
 
 function formatComponentName(vm) {
   if (vm.$root === vm) return 'root';
-  var name = vm._isVue
+  let name = vm._isVue
       ? (vm.$options && vm.$options.name) ||
         (vm.$options && vm.$options._componentTag)
       : vm.name;
@@ -37,14 +44,14 @@ function formatComponentName(vm) {
           : '')
   );
 }
-console.log(process.env.NODE_ENV)
-if(process.env.NODE_ENV === 'production'){
-  var fundebug = require('fundebug-javascript');
+console.log(process.env.VUE_APP_FUNDEBUG)
+if (process.env.VUE_APP_FUNDEBUG === 'true'){
+  let fundebug = require('fundebug-javascript');
   fundebug.apikey = '18a2bc4560d4b9731c73e99bbb248c8dd5b57416959a3621163639d4e451e20a';
-  Vue.config.errorHandler = function(err, vm, info) {
+  Vue.config.errorHandler = function (err, vm, info) {
     if (vm) {
-        var componentName = formatComponentName(vm);
-        var propsData = vm.$options && vm.$options.propsData;
+        let componentName = formatComponentName(vm);
+        let propsData = vm.$options && vm.$options.propsData;
         fundebug.notifyError(err, {
             metaData: {
                 componentName: componentName,
@@ -62,10 +69,8 @@ if(process.env.NODE_ENV === 'production'){
 
 Vue.config.productionTip = false
 
-var a = 1
 
 new Vue({
-  a,
   router,
   store,
   render: h => h(App)

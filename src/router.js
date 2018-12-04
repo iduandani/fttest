@@ -1,37 +1,50 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
-      component: Home
+      meta: {
+        keepAlive: true,
+        menu: {
+          firCode: '100'
+        }
+      },
+      component: () => import(/* webpackChunkName: "goodsInfo" */ './views/home')
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/goods-info',
+      name: 'goodsInfo',
       meta: {
-        keepAlive: true
+        keepAlive: true,
+        menu: {
+          firCode: '101',
+          secCode: '1011',
+          menuCode: '10111'
+        }
       },
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import(/* webpackChunkName: "goodsInfo" */ './views/goods/goodsInfo')
     },
     {
-      path: '/other',
-      name: 'other',
+      path: '/goods-prop',
+      name: 'goodsProp',
       meta: {
-        keepAlive: true
+        keepAlive: true,
+        menu: {
+          firCode: '101',
+          secCode: '1011',
+          menuCode: '10112'
+        }
       },
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "other" */ './views/Other.vue')
+      component: () => import(/* webpackChunkName: "goodsProp" */ './views/goods/goodsProp')
+    },
+    {
+      path: '*',
+      redirect: {path: '/home'}
     }
   ]
 })

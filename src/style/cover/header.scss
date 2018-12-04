@@ -1,0 +1,139 @@
+@import './base.scss';
+.pos-app {
+    .pos-app-arrow-dropdown {
+        font-size: $fz-title;
+    }
+    .ivu-layout-header {
+        padding: 0;
+        height: $height-header;
+    }
+    .pos-app-header {
+        box-sizing: border-box;
+        height: $height-header;
+        background: #16181d;
+        line-height: $height-header;
+        padding: 0;
+        color: $color-fz-light;
+        .ivu-select-dropdown {
+            width: 100%;
+            margin: 0;
+            background-color: $color-main;
+            border-radius: 0px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0);
+            padding: 0;
+            .ivu-dropdown-item:nth-child(1) {
+                border-top: none;
+            }
+            .ivu-dropdown-item {
+                color: $color-fz-light;
+                padding: $gap-thin $gap-normal;
+                width: 100%;
+                border-top: 1px solid #038bc4;
+            }
+            .ivu-dropdown-item:hover {
+                background: #038bc4;
+            }
+            ;
+        }
+        .pos-app-dropdown {
+            position: relative;
+            padding: 0 $gap-normal;
+            width: 100%;
+            box-sizing: border-box;
+            a {
+                color: $color-fz-light;
+            }
+            .pos-app-arrow-dropdown {
+                transition: all .5s;
+            }
+        }
+        .pos-app-dropdown:hover {
+            background: $color-main;
+            .pos-app-arrow-dropdown {
+                transform: rotate(180deg)
+            }
+        }
+        .pos-app-logo {
+            width: 115px;
+            height: $height-header;
+            box-sizing: border-box;
+            border-top: 0px solid #333;
+            border-right: 1px solid #333;
+            border-bottom: 1px solid #333;
+            border-left: 0px solid #333;
+            float: left;
+            line-height: $height-header;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 24px;
+            img {
+                vertical-align: middle;
+            }
+        }
+        .pos-app-path {
+            padding: 0 $gap-xwide;
+            font-size: $fz-nav;
+            float: left;
+            color: $color-fz-light;
+            span {
+                &.last {
+                    color: $color-fz-light;
+                }
+            }
+            span.pos-path-nav {
+                margin-right: 40px;
+                opacity: .5;
+                position: relative;
+                &:nth-child(1) {
+                    &::after {
+                        display: none;
+                    }
+                }
+                &:nth-last-child(1) {
+                    opacity: 1;
+                }
+                &::after {
+                    content: " ";
+                    opacity: .5;
+                    position: absolute;
+                    top: 4px;
+                    left: -35px;
+                    width: 9px;
+                    height: 9px;
+                    box-sizing: border-box;
+                    border-top: 1px solid $color-fz-light;
+                    border-right: 1px solid $color-fz-light;
+                    border-bottom: 1px solid transparent;
+                    border-left: 1px solid transparent;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+        .pos-app-func {
+            height: 100%;
+            float: right;
+            margin-right: $gap-xwide;
+            .pos-app-park {
+                display: inline-block;
+                vertical-align: middle;
+                width: 120px;
+                height: 100%;
+            }
+            .split {
+                margin: 0 $gap-normal 0 -2px;
+            }
+            .pos-app-user {
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%;
+                img {
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 100%;
+                    vertical-align: middle;
+                    margin-right: $gap-normal;
+                }
+            }
+        }
+    }
+}
