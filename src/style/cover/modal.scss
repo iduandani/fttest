@@ -1,0 +1,87 @@
+@import '../base.scss';
+.pos-app-modal {
+    .ivu-modal-wrap {
+        display: flex;
+        align-items: center;
+    }
+    .ivu-modal {
+        top: 0
+    }
+    .ivu-modal-body {
+        padding: 0 $gap-modal-form;
+    }
+    .ivu-modal-content {
+        border-radius: 0;
+    }
+    .ivu-modal-header-inner {
+        font-size: $fz-title;
+        font-weight: normal;
+        color: $color-fz-main;
+    }
+    .ivu-modal-close {
+        top: 12px;
+        right: 20px;
+        .ivu-icon-ios-close {
+            font-size: 24px;
+            font-weight: normal;
+            color: $color-fz-main;
+        }
+    }
+    .ivu-modal-header {
+        background: $color-modal-title;
+    }
+    .ivu-modal-footer {
+        height: 81px;
+        padding: 0 $gap-normal;
+        text-align: center;
+        line-height: 81px;
+        button {
+            font-size: $fz-modal-btn;
+            height: $height-modal-footer-btn;
+            width: $width-modal-footer-btn;
+            border-radius: 0;
+            margin-left: $gap-wide;
+            border:$border-modal-footer-button;
+            &.ivu-btn-primary {
+                background: $color-btn-sure;
+                border: 1px solid $color-btn-sure;
+            }
+        }
+    }
+    .ivu-tabs {
+        margin-top: $gap-xwide;
+    }
+    .ivu-tabs-bar {
+        margin-bottom: 0;
+    }
+    .ivu-tabs-nav-scroll {
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: bold;
+        .ivu-tabs-tab {
+            padding: 0 16px 10px;
+            margin: 0 24px;
+            border-bottom: none;
+            &:hover{
+                color: $color-tab-active;
+                border-bottom: $border-tab-active;
+            }
+            &:focus{
+                outline: none;
+                border-bottom: $border-tab-active;
+            }
+        }
+        .ivu-tabs-nav .ivu-tabs-tab.ivu-tabs-tab-active {
+            color: $color-tab-active;
+            border-bottom: $border-tab-active;
+        }
+        .ivu-tabs-ink-bar {
+            background-color: $color-tab-active;
+            display: none;
+        }
+    }
+    .ivu-tabs-tabpane {
+        padding: $gap-xwide $gap-tabs-tabpane;
+    }
+}

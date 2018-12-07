@@ -2,7 +2,7 @@
   <div class="pos-app-table">
     <Table :width="width" :columns="columns" disabled-hover :data="data" stripe border @on-sort-change='sort'></Table>
     <div class="pos-app-page">
-      <Page :total="total" :page-size="pageSize" :current.sync="pageIndex"  show-total show-elevator show-sizer @on-page-size-change='pageSizeChange' @on-change='pageChange'></Page>
+      <Page v-if="showPage" :total="total" :page-size="pageSize" :current.sync="pageIndex"  show-total show-elevator show-sizer @on-page-size-change='pageSizeChange' @on-change='pageChange'></Page>
     </div>
   </div>
 </template>
@@ -26,6 +26,9 @@ export default {
         },
         pageSize: {
 
+        },
+        showPage: {
+            default: false
         }
     },
     data(){

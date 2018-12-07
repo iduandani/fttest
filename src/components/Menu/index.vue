@@ -40,93 +40,107 @@
           </ul>
         </li>
       </ul>
-      <div class="hide-menu" @click="hideMenu"></div>
+      <div class="hide-menu" @click="hideMenu">
+        <span><img :src="hideLogo" alt=""></span>
+      </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  props: {
-    value: {},
-    navList: {
-      default() {
-        return [];
-      }
-    }
-  },
-  data() {
-    return {
-      firMenuCode: '',
-      secMenuCode: '',
-      thrMenuCode: '',
-      hideSecMune: false,
-      secMenuWidth: '135px',
-      navLogo: {
-        home: require('@/assets/navLogo/home.png'),
-        goods: require('@/assets/navLogo/goods.png'),
-        store: require('@/assets/navLogo/store.png')
-      }
-    };
-  },
-  methods: {
-    hideMenu() {
-      this.hideSecMuneFlag = true;
+    props: {
+        value: {},
+        navList: {
+            default() {
+                return [];
+            }
+        },
+        hideSecMune: {}
     },
-    navClick(item) {
-      this.firMenuCode = item.code;
-      this.hideSecMuneFlag = false;
-      if (item.url) {
-        this.$router.push({
-          path: item.url
-        });
-        return;
-      }
+    data() {
+        return {
+            firMenuCode: '',
+            secMenuCode: '',
+            thrMenuCode: '',
+            secMenuWidth: '135px',
+            hideLogo: require('@/assets/hide-logo.png'),
+            navLogo: {
+                home: require('@/assets/navLogo/home.png'),
+                goods: require('@/assets/navLogo/goods.png'),
+                store: require('@/assets/navLogo/store.png')
+            }
+        };
     },
-    secLiClick(item) {
-      let collapse = item.collapse;
-      if (item.children && item.children.length > 0) {
-        this.$set(item, 'collapse', !collapse);
-      } else {
-        this.thrMenuCode = item.code;
-        if (item.url) {
-          this.$router.push({
-            path: item.url
-          });
+    methods: {
+        hideMenu() {
+            this.hideSecMuneFlag = true;
+        },
+        navClick(item) {
+
+
+            if (item.url && this.firMenuCode != item.code) {
+                this.$router.push({
+                    path: item.url,
+                    query: {
+                        sign: new Date().getTime()
+                    }
+                });
+                return;
+            }
+            this.firMenuCode = item.code;
+            this.hideSecMuneFlag = false;
+        },
+        secLiClick(item) {
+            let collapse = item.collapse;
+            if (item.children && item.children.length > 0) {
+                this.$set(item, 'collapse', !collapse);
+            } else {
+                if (this.thrMenuCode == item.code){
+                    return
+                }
+                this.thrMenuCode = item.code;
+                if (item.url) {
+                    this.$router.push({
+                        path: item.url,
+                        query: {
+                            sign: new Date().getTime()
+                        }
+                    });
+                }
+            }
         }
-      }
-    }
-  },
-  computed: {
-    curSelFirMenu() {
-      const code = this.firMenuCode;
-      const item = this.navList.find(ele => ele.code == code);
-      return item || {};
     },
-    secMenuList() {
-      return this.curSelFirMenu.children || [];
+    computed: {
+        curSelFirMenu() {
+            const code = this.firMenuCode;
+            const item = this.navList.find(ele => ele.code == code);
+            return item || {};
+        },
+        secMenuList() {
+            return this.curSelFirMenu.children || [];
+        },
+        hideSecMuneFlag: {
+            get() {
+                return (
+                    this.hideSecMune || !this.secMenuList || this.secMenuList.length <= 0
+                );
+            },
+            set(val) {
+                this.hideSecMune = val;
+                this.$emit('visible-change',val || !this.secMenuList || this.secMenuList.length <= 0)
+            }
+        },
+
     },
-    hideSecMuneFlag: {
-      get() {
-        return (
-          this.hideSecMune || !this.secMenuList || this.secMenuList.length <= 0
-        );
-      },
-      set(val) {
-        this.hideSecMune = val;
-        this.$emit('visible-change',val || !this.secMenuList || this.secMenuList.length <= 0)
-      }
-    }
-  },
     watch: {
-    $route(val){
-      const menu =  val.meta.menu || {}
-      const {firCode,secCode,menuCode} = menu
-      this.firMenuCode = firCode
-      this.secMenuCode = secCode
-      this.thrMenuCode = menuCode
-      this.hideSecMuneFlag = false
-    }
-  },
+        $route(val){
+            const menu =  val.meta.menu || {}
+            const {firCode,secCode,menuCode} = menu
+            this.firMenuCode = firCode
+            this.secMenuCode = secCode
+            this.thrMenuCode = menuCode
+        }
+    },
 };
 </script>
 <style lang="scss" scoped>

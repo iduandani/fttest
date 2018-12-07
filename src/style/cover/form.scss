@@ -1,0 +1,190 @@
+@import '../base.scss';
+.pos-app-form {
+    .pos-app-select {
+        &.required {
+            label {
+                color: $color-form-required
+            }
+        }
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: $gap-wide;
+        margin-bottom: $gap-thin;
+        width: $width-form-control;
+        height: $height-form-control;
+        border: $border-form-control;
+        line-height: $height-form-control;
+        box-sizing: border-box;
+        position: relative;
+        label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 96px;
+            height:$height-form-control - 2;
+            background: $color-bg-form-label;
+            box-sizing: border-box;
+            padding-left: 22px;
+        }
+        .ivu-select-selection {
+            height: 100%;
+            border: none;
+            padding-left: 100px;
+        }
+        .ivu-select-placeholder {
+            height: 34px;
+            box-sizing: border-box;
+        }
+        
+    }
+    .pos-app-treeselect {
+        &.required {
+            label.title {
+                color: $color-form-required
+            }
+        }
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: $gap-wide;
+        margin-bottom: $gap-thin;
+        width: $width-form-control;
+        height: $height-form-control;
+        border: $border-form-control;
+        line-height: $height-form-control;
+        box-sizing: border-box;
+        position: relative;
+        label.title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 96px;
+            height:$height-form-control - 2;
+            background: $color-bg-form-label;
+            box-sizing: border-box;
+            padding-left: 22px;
+        }
+        .vue-treeselect__control{
+            height: 100%;
+            border: none;
+            border-radius: 0;
+        }
+        .vue-treeselect__single-value{
+            padding-left: 100px;
+        }
+        .vue-treeselect__input-container{
+            height: 38px;
+        }
+        .vue-treeselect__placeholder, .vue-treeselect__single-value{
+            line-height: 38px;
+        }
+        
+    }
+    .pos-app-switch {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        color: $color-form-control-switch;
+        width: $width-form-control;
+        height: $height-form-control;
+        border: $border-form-control;
+        line-height: $height-form-control;
+        box-sizing: border-box;
+        padding-left: 22px;
+        label {
+            color: $color-form-control-switch;
+        }
+        label.required {
+            color: $color-form-required;
+        }
+        span.ivu-switch {
+            height: 26px;
+            width: 50px;
+            float: right;
+            margin: 6px;
+            background: rgb(204, 204, 204);
+        }
+        .ivu-switch:after {
+            width: 20px;
+            height: 20px;
+            top: 2px;
+        }
+        .ivu-switch-checked:after {
+            top: 3px;
+            left: 28px;
+        }
+        span.ivu-switch-checked {
+            background: $color-bg-switch-checked;
+            border: none;
+        }
+        .ivu-switch:focus {
+            box-shadow: none;
+        }
+    }
+    .pos-app-input {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        color: #999999;
+        width: $width-form-control;
+        .ivu-input-group{
+            top: 0;
+        }
+        .ivu-input {
+            height:$height-form-control;
+            border-radius: 0;
+            font-size: $fz-label;
+            border:$border-form-control;
+            border-left: 0;
+        }
+        .no-border-right {
+            .ivu-input {
+                border-right: 0;
+            }
+        }
+        .ivu-input:focus {
+            box-shadow: none;
+            border-color: $color-border-input;
+        }
+        .ivu-input:hover {
+            border-color: $color-border-input;
+        }
+        .ivu-input-group-prepend {
+            width: 96px;
+            text-align: left;
+            padding-left: 22px;
+            box-sizing: border-box;
+            border-radius: 0;
+            background-color: $color-bg-form-label;
+            color: #666666;
+            .required {
+                color: $color-form-required;
+            }
+        }
+        .ivu-input-group-append {
+            padding: 0;
+            border-radius: 0;
+            background-color: transparent;
+            width: 40px;
+            button {
+                background: #0D9ECE;
+                color: #fff;
+                height: 100%;
+                width: 50px;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+                border-radius: 0;
+                display: block;
+                height: $height-form-control;
+                margin-top: -1px;
+                font-size: $fz-label;
+            }
+        }
+        .ivu-input[disabled],
+        fieldset[disabled] .ivu-input {
+            background-color: $color-bg-form-label;
+        }
+    }
+}

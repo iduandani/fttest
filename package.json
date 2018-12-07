@@ -1,6 +1,6 @@
 {
-  "name": "test1",
-  "version": "0.1.0",
+  "name": "pos-business-system",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -10,6 +10,7 @@
     "qa": "vue-cli-service build --mode qa"
   },
   "dependencies": {
+    "@riophae/vue-treeselect": "^0.0.37",
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.11.0",
     "fundebug-javascript": "^1.4.0",

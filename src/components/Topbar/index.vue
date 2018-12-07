@@ -30,7 +30,7 @@
           <DropdownMenu slot="list">
             <DropdownItem>退出登录</DropdownItem>
             <DropdownItem>退出登录</DropdownItem>
-            <DropdownItem>退出登录</DropdownItem>
+            <DropdownItem @click.native="logout">退出登录</DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </span>
@@ -44,48 +44,53 @@
 <script>
 import { Dropdown, DropdownMenu, DropdownItem } from 'iview';
 export default {
-  components: {
-    Dropdown,
-    DropdownMenu,
-    DropdownItem
-  },
-  props: {
-    navList: {
-        default(){
-            return []
+    components: {
+        Dropdown,
+        DropdownMenu,
+        DropdownItem
+    },
+    props: {
+        navList: {
+            default(){
+                return []
+            }
+        }
+    },
+    data(){
+        return {
+            logoImg: require('@/assets/ftlogo.png'),
+        }
+    },
+    methods: {
+        logout(){
+            location.href = '/login.html?returnUrl=' + encodeURIComponent(location.href)
+        }
+    },
+    computed: {
+        curFirMenu() {
+            const menu = this.$route.meta.menu || {};
+            const code = menu.firCode;
+            const item = this.navList.find(ele => ele.code == code);
+            return item || {};
+        },
+        secMenuList() {
+            return this.curSelFirMenu.children || [];
+        },
+        curSecMenu() {
+            const menu = this.$route.meta.menu || {};
+            const code = menu.secCode;
+            const list = this.curFirMenu.children || [];
+            const item = list.find(ele => ele.code == code);
+            return item || {};
+        },
+        curThrMenu() {
+            const menu = this.$route.meta.menu || {};
+            const code = menu.menuCode;
+            const list = this.curSecMenu.children || [];
+            const item = list.find(ele => ele.code == code);
+            return item || {};
         }
     }
-  },
-  data(){
-      return {
-        logoImg: require('@/assets/ftlogo.png'),
-      }
-  },
-  computed: {
-    curFirMenu() {
-      const menu = this.$route.meta.menu || {};
-      const code = menu.firCode;
-      const item = this.navList.find(ele => ele.code == code);
-      return item || {};
-    },
-    secMenuList() {
-      return this.curSelFirMenu.children || [];
-    },
-    curSecMenu() {
-      const menu = this.$route.meta.menu || {};
-      const code = menu.secCode;
-      const list = this.curFirMenu.children || [];
-      const item = list.find(ele => ele.code == code);
-      return item || {};
-    },
-    curThrMenu() {
-      const menu = this.$route.meta.menu || {};
-      const code = menu.menuCode;
-      const list = this.curSecMenu.children || [];
-      const item = list.find(ele => ele.code == code);
-      return item || {};
-    }
-  }
 };
 </script>
 <style lang="scss" scoped>

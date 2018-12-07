@@ -1,12 +1,12 @@
 <template>
   <div class="pos-app-input">
-    <Input v-model="modelVal"  :class="showAppend?'no-border-right':''"  :disabled="disabled">
+    <i-input v-model="modelVal"  :class="showAppend?'no-border-right':''"  :disabled="disabled">
       <span slot="prepend"><span :class="{required:required}">{{title}}</span></span>
       <span slot="append" v-if="showAppend">
           <span v-if="appendText">{{appendText}}</span>
           <slot name="append"></slot>
       </span>
-    </Input>
+    </i-input>
   </div>
 </template>
 <script>

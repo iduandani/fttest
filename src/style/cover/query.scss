@@ -1,0 +1,201 @@
+.ivu-select-visible .ivu-select-selection {
+    outline: 0;
+    box-shadow: none;
+}
+
+// 查询条件
+.pos-app-info-query {
+    width: 150px;
+    color: $color-fz-main;
+    margin-right: 20px;
+    .ivu-select-selection {
+        border-radius: 0px;
+        height: 34px;
+    }
+    .ivu-select-dropdown {
+        background: $color-bg-main;
+        box-shadow: $shadow-dropdown;
+    }
+    .ivu-select-selection .ivu-select-placeholder,
+    .ivu-select-selection .ivu-select-selected-value {
+        height: 32px;
+        line-height: 32px;
+    }
+    .ivu-icon-ios-arrow-down {
+        font-size: 20px;
+        color: $color-fz-main;
+    }
+    .ivu-select-arrow {
+        top: 36%;
+    }
+    .ivu-icon-ios-arrow-down:before {
+        content: "\F33D";
+    }
+}
+.pos-app-query-treeselect{
+    display: inline-block;
+    vertical-align: middle;
+    width: 150px;
+    color: $color-fz-main;
+    margin-right: 20px;
+   
+    .vue-treeselect__control{
+        border-radius: 0;
+        height: 34px;
+    }
+}
+.pos-top-split {
+    height: 1px;
+    background: $color-split;
+    margin: 9px 0;
+}
+
+.pos-app-search-input {
+    display: inline-block;
+    vertical-align: middle;
+    width: 318px;
+    .ivu-input {
+        border-radius: 0px;
+        height: 32px;
+        padding:0 7px;
+        box-sizing: content-box;
+    }
+    .ivu-input-group-append {
+        border-radius: 2px;
+        width: 50px;
+        background: $color-bg-query-btn !important;
+    }
+    .ivu-input-group{
+        top:0
+    }
+}
+
+.pos-app-qurery-btn {
+    border-radius: 0px;
+    margin-right: 10px;
+    padding: 0px 22px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    background-color: $color-bg-query-btn;
+    border: none;
+}
+.pos-app-qurery-btn:hover {
+    background: $color-bg-query-btn-hover;
+}
+
+
+// 表格
+.pos-app-table {
+    float: left;
+    .ivu-table-cell{
+        padding: 0 3px;
+        height: 38px;
+    }
+    .table-action-div {
+        .table-action {
+            padding: 0 32px;
+            font-size: 12px;
+            color: $color-table-action-item;
+            text-decoration: underline;
+            position: relative;
+            &:nth-last-child(1) {
+                &::after {
+                    display: none;
+                }
+            }
+            &::after {
+                content: "";
+                right: 1px;
+                top: 2px;
+                color: $color-fz-light;
+                height: 10px;
+                width: 1px;
+                position: absolute;
+                background: $color-fz-main;
+            }
+        }
+    }
+    .ivu-table {
+        &::after,
+        &::before {
+            height: 0;
+            width: 0;
+        }
+    }
+    margin-top: 19px;
+    .ivu-table-wrapper {
+        border: none;
+    }
+    .ivu-table th {
+        background:$color-bg-table-header;
+        font-size: 14px;
+        font-weight: 400;
+        color: $color-fz-main;
+        height: 44px;
+        line-height: 40px;
+        box-sizing: border-box；
+    }
+    .ivu-table td {
+        font-size: 12px;
+        font-weight: 400;
+        color: $color-table-td;
+        line-height: 38px;
+        height: 38px;
+    }
+    .ivu-table-border td,
+    .ivu-table-border th {
+        border-right: $border-table-td;
+        border-bottom: none;
+        text-align: center;
+    }
+    .ivu-table-stripe .ivu-table-body tr:nth-child(2n) td {
+        background: $color-table-td-stripe;
+    }
+}
+
+// 分页
+.pos-app-page {
+    margin-top: 13px;
+    text-align: right;
+    .ivu-page-next,
+    .ivu-page-prev,
+    .ivu-page-item {
+        border-radius: 0;
+        border: none;
+        min-width: 30px;
+        height: 26px;
+        line-height: 26px;
+    }
+    .ivu-select-single .ivu-select-selection {
+        border-radius: 0;
+        min-width: 30px;
+        height: 26px;
+        line-height: 26px;
+    }
+    .ivu-page-options-elevator input {
+        border-radius: 0;
+        min-width: 30px;
+        height: 26px;
+        line-height: 26px;
+    }
+    .ivu-select-selected-value {
+        height: 24px;
+    }
+    .ivu-page-item-active {
+        background: $color-tab-active;
+        a,
+        &:hover a {
+            color: $color-fz-light;
+        }
+    }
+    .ivu-select-single .ivu-select-selection .ivu-select-placeholder,
+    .ivu-select-single .ivu-select-selection .ivu-select-selected-value {
+        height: 24px;
+        line-height: 24px;
+    }
+    .ivu-select-dropdown {
+        background: $color-bg-main;
+        box-shadow: $shadow-dropdown;
+    }
+}

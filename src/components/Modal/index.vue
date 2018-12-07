@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Modal :width="width" class="pos-app-modal" :ok-text='okText' v-model="modelVal" :title="title">
+        <Modal :mask-closable='false' :width="width" class="pos-app-modal" :ok-text='okText' v-model="modelVal" :title="title">
             <slot></slot>
         </Modal>
    </div>

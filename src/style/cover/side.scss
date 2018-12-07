@@ -1,0 +1,117 @@
+@import '../base.scss';
+.pos-app {
+    .pos-app-sider {
+        box-sizing: border-box;
+        background: $color-bg-menu;
+        height: 100%;
+        color: $color-fz-light;
+        transition: width .5s;
+        .pos-sider-mian-menu {
+            width: $width-slder-menu;
+            box-sizing: border-box;
+            float: left;
+        }
+        .pos-sider-sec-menu {
+            width: $width-slder-sec-menu;
+            height: 100%;
+            box-sizing: border-box;
+            float: left;
+            background: $color-bg-sec-menu;
+            position: relative;
+            overflow: hidden;
+            color: $color-sec-menu;
+            padding-top: $gap-wide;
+            .hide-menu {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                background: #f4f7f7;
+                width: 14px;
+                height: 22px;
+                line-height: 27px;
+                text-align: center;
+                transform: translateY(-50%);
+                &::after{
+                  content: '';
+                  width: 0;
+                  height: 0;
+                  border-bottom: 7px solid #f4f7f7;
+                  border-right: 7px solid #f4f7f7;
+                  border-top: 7px solid transparent;
+                  border-left: 7px solid transparent;
+                  position: absolute;
+                  top: -14px;
+                  left: 0;
+                }
+                &::before{
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-top: 7px solid #f4f7f7;
+                    border-right: 7px solid #f4f7f7;
+                    border-bottom: 7px solid transparent;
+                    border-left: 7px solid transparent;
+                    position: absolute;
+                    bottom: -14px;
+                    left: 0;
+                  }
+            }
+            .fir-nav-arrow {
+                position: absolute;
+                left: 10px;
+                top: 9px;
+                font-weight: 600;
+                transition: all .5s;
+                transform: rotate(-90deg);
+            }
+            li.menu-fir-nav>a {
+                font-weight: 600;
+            }
+            li {
+                position: relative;
+                &>a {
+                    padding-left: $gap-xwide;
+                    height: $height-menu-item;
+                    line-height: $height-menu-item;
+                    display: block;
+                }
+                &.active {
+                    background: $color-bg-main;
+                }
+                &.expand {
+                    .fir-nav-arrow {
+                        position: absolute;
+                        left: 10px;
+                        top: 9px;
+                        font-weight: 600;
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+        }
+        .sider-icon {
+            margin: 0 $gap-normal;
+            position: relative;
+            top: -1px;
+            img {
+                vertical-align: middle;
+                height: $height-menu-icon;
+            }
+        }
+        .pos-sider-nav {
+            &>li {
+                height: $height-header;
+                margin: 7px 0;
+                font-size: $fz-nav;
+                line-height: $height-header;
+                transition: background .5s;
+                a {
+                    color: $color-fz-light;
+                }
+                &.active {
+                    background: $color-nav-light
+                }
+            }
+        }
+    }
+}

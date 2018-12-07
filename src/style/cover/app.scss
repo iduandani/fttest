@@ -1,0 +1,59 @@
+@import '../base.scss';
+.pos-app ul {
+    li {
+        list-style: none;
+    }
+}
+
+.pos-app a {
+    color: inherit;
+}
+
+.pos-app-content {
+    background: $color-bg-main;
+    height: 100%;
+    padding: $gap-normal $gap-xwide;
+    overflow: auto;
+}
+.ivu-layout.ivu-layout-has-sider>.ivu-layout, .ivu-layout.ivu-layout-has-sider>.ivu-layout-content{
+    overflow-x: auto
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    overflow-x:visible;
+    background-color: transparent;
+}
+
+.ivu-select-selection-focused, .ivu-select-selection:hover{
+    border-color:#dcdee2
+}
+.ivu-select-item-selected, .ivu-select-item-selected:hover{
+    color: #0D9ECE;
+    
+}
+.ivu-select-visible .ivu-select-selection{
+    border-color:#dcdee2
+}
+.ivu-input-with-search:hover .ivu-input{
+    border-color:#dcdee2
+}
+.ivu-input:focus,.ivu-input:hover{
+    border-color:#dcdee2;
+    box-shadow:none
+}
+/*滑块*/
+::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    margin-left: -5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #777;
+}
+
+
+/*滑道*/
+::-webkit-scrollbar-track {
+    background-color: #eee;
+}

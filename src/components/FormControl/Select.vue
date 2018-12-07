@@ -1,7 +1,7 @@
 <template>
-  <div class="pos-app-Select" :class="{required:required}">
-    <Select v-model="modelVal">
-      <Option value="1"></Option>
+  <div class="pos-app-select" :class="{required:required}">
+    <Select v-model="modelVal" :placeholder="placeholder">
+      <Option v-for="(opt,index) in options" :key="index" :value="opt.value">{{opt.name}}</Option>
     </Select>
     <label for>{{title}}</label>
   </div>
@@ -14,6 +14,12 @@ export default {
         required: {
             default: false
         },
+        options: {
+            default(){
+                return []
+            }
+        },
+        placeholder: {}
     },
     data(){
         return {

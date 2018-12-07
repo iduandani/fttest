@@ -2,6 +2,7 @@
 $fz-title:16px; // 标题字体
 $fz-nav:14px; // 导航字体
 $fz-content:12px; // 内容字体
+$fz-label:14px;
 $fz-modal-btn:16px;
 // 间隔
 $gap-xwide:30px;
@@ -9,17 +10,67 @@ $gap-wide:20px;
 $gap-normal:15px;
 $gap-thin:10px;
 $gap-xthin:5px;
+$gap-header-path:40px;//头部面包屑右间隔
+$gap-modal-form:94px;//弹出表单左右间隙
+$gap-tabs-tabpane:50px;//tab页左右间隙
 
 //特定高度
-$height-header:55px;
+$height-header:55px;//头部高度
+$height-user-logo:36px;//头部头像高度
+$height-menu-item:34px;// 菜单项高度
+$height-menu-icon:14px;// 菜单项图标高度
+$height-modal-footer-btn:46px;// 模态框按钮高度
+$height-form-control:40px;// 表单控件高度
 
-//颜色
-$color-main:#169cd4;
-$color-bg-main:#fff;
-$color-fz-main:#000;
-$color-fz-light:#fff;
-$color-nav-light:#0d9fcd;
-$color-btn-sure:#0D9ECE;
-$color-modal-title:#EAEEEF;
+// 特定宽度
+$width-header-park:120px;//头部公园下拉菜单宽度
+$width-user-logo:36px;//头部头像高度
+$width-slder-menu:115px;//左侧菜单宽度
+$width-slder-sec-menu:135px;//左侧二级菜单宽度
+$width-modal-footer-btn:120px;// 模态框按钮宽度
+$width-form-control:340px;
+//主色
+$color-main:#169cd4;// 系统主色
+$color-bg-main:#fff;// 主背景色
+$color-fz-main:#000;// 字体主色
+
+//头部、菜单颜色
+$color-bg-header:#16181d;// 头部背景色
+$color-bg-menu:#16181d;// 菜单背景色
+$color-bg-sec-menu:#eaeef2;// 二级菜单背景色
+$color-sec-menu:#666666;//二级菜单字体色
+
+$color-fz-light:#fff;// 字体高亮色
+$color-nav-light:#0d9fcd;// 菜单高亮色
+$color-btn-sure:#0D9ECE;// 按钮高亮色
+$color-modal-title:#EAEEEF;// 
 $color-tab-active:#0D9ECE;
 
+$color-form-required:#0D9ECE;
+$color-bg-query-btn:#0d9ece;
+$color-bg-query-btn-hover:rgba(13, 158, 206, 0.8);
+$color-border-input:#E5E5E5;
+$color-bg-form-label:#eeeeee;
+$color-bg-switch-checked:#43B9E0;
+$color-form-control-switch:#999999;
+$color-split:#eeeeee;
+$color-bg-table-header:#7fc8ea;
+$color-table-td:#666666;
+$color-table-td-stripe:#e8f5fb;
+$color-table-action-item:#0d9ece;
+// 阴影
+$shadow-header-dropdown:0 1px 6px rgba(0, 0, 0, 0);// 头部下拉框阴影
+$shadow-dropdown:0 1px 6px rgba(0, 0, 0, 0.2);// 下拉框阴影
+
+
+//边框
+$border-header-dropdown:1px solid #038bc4;// 头部下拉下拉项边框
+$border-header-logo:1px solid #333;// 头部logo边框
+$border-modal-footer-button:1px solid #D2D2D2;// 头部logo边框
+$border-tab-active:3px solid $color-tab-active;// tab选中边框
+$border-form-control:1px solid $color-border-input;// 表单控件边框
+$border-table-td:1px solid #fff;
+//其他
+@mixin name {
+    
+}
