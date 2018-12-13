@@ -75,7 +75,7 @@
     margin-right: 10px;
     padding: 0px 22px;
     height: 26px;
-    line-height: 26px;
+    line-height: 24px;
     font-size: 12px;
     background-color: $color-bg-query-btn;
     border: none;
@@ -91,8 +91,10 @@
     .ivu-table-cell{
         padding: 0 3px;
         height: 38px;
+        //position: relative;
     }
     .table-action-div {
+        text-align: left;
         .table-action {
             padding: 0 32px;
             font-size: 12px;
@@ -135,6 +137,9 @@
         height: 44px;
         line-height: 40px;
         box-sizing: border-box；
+    }
+    .ivu-table tr{
+        position: relative;
     }
     .ivu-table td {
         font-size: 12px;

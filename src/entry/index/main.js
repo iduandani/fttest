@@ -24,7 +24,8 @@ import {
     OptionGroup,
     Modal,
     CheckboxGroup,
-    Checkbox
+    Checkbox,
+    DatePicker
 } from 'iview';
 Vue.component('Button', Button);
 Vue.component('Table', Table);
@@ -38,41 +39,10 @@ Vue.component('OptionGroup', OptionGroup);
 Vue.component('Modal', Modal)
 Vue.component('CheckboxGroup', CheckboxGroup)
 Vue.component('Checkbox', Checkbox)
-//fundebug
-function formatComponentName(vm) {
-    if (vm.$root === vm) return 'root';
-    let name = vm._isVue
-        ? (vm.$options && vm.$options.name) ||
-        (vm.$options && vm.$options._componentTag)
-        : vm.name;
-    return (
-        (name ? 'component <' + name + '>' : 'anonymous component') +
-      (vm._isVue && vm.$options && vm.$options.__file
-          ? ' at ' + (vm.$options && vm.$options.__file)
-          : '')
-    );
-}
-console.log(process.env.VUE_APP_FUNDEBUG)
-if (process.env.VUE_APP_FUNDEBUG === 'true'){
-    let fundebug = require('fundebug-javascript');
-    fundebug.apikey = '18a2bc4560d4b9731c73e99bbb248c8dd5b57416959a3621163639d4e451e20a';
-    Vue.config.errorHandler = function (err, vm, info) {
-        if (vm) {
-            let componentName = formatComponentName(vm);
-            let propsData = vm.$options && vm.$options.propsData;
-            fundebug.notifyError(err, {
-                metaData: {
-                    componentName: componentName,
-                    propsData: propsData,
-                    info: info
-                }
-            });
-        } else {
-            fundebug.notifyError(err);
-        }
-    };
+Vue.component('DatePicker', DatePicker)
 
-}
+Vue.prototype.$baseUrl = process.env.VUE_APP_BASEURL
+//fundebug
 
 
 Vue.config.productionTip = false

@@ -82,6 +82,9 @@
         }
     }
     .ivu-tabs-tabpane {
-        padding: $gap-xwide $gap-tabs-tabpane;
+        padding: $gap-xwide 0;
+        height: 508px;
+        overflow-y:auto;
+        overflow-x: hidden;
     }
 }

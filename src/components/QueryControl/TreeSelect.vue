@@ -4,7 +4,10 @@
               :options="options"
               class="pos-app-query-treeselect"
               :clearable="false"
+              :disabled="disabled"
               :placeholder="placeholder"
+               noOptionsText="暂无数据"
+              noResultsText="暂无数据"
             />
 </template>
 <script>
@@ -24,7 +27,9 @@ export default {
         value: {
             default: undefined
         },
-
+        disabled: {
+            default: true
+        },
         placeholder: {
 
         }

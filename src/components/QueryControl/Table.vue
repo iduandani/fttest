@@ -1,6 +1,14 @@
 <template>
   <div class="pos-app-table">
-    <Table :width="width" :columns="columns" disabled-hover :data="data" stripe border @on-sort-change='sort'></Table>
+    <Table
+    :width="width"
+    :columns="columns"
+     disabled-hover
+     :data="data"
+     stripe
+     border
+      @on-sort-change='sort'
+      @on-selection-change='selectChange'></Table>
     <div class="pos-app-page">
       <Page :total="total" :page-size="pageSize" :current.sync="pageIndex"  show-total show-elevator show-sizer @on-page-size-change='pageSizeChange' @on-change='pageChange'></Page>
     </div>
@@ -69,6 +77,9 @@ export default {
                 })
             })
 
+        },
+        selectChange(data){
+            this.$emit('select-change',data)
         },
         sort(data){
             this.$emit('on-sort-change',data)

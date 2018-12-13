@@ -1,4 +1,7 @@
 @import '../base.scss';
+body{
+    color: #000
+}
 .pos-app ul {
     li {
         list-style: none;
@@ -15,6 +18,18 @@
     padding: $gap-normal $gap-xwide;
     overflow: auto;
 }
+.ivu-switch-checked{
+    border-color: $color-bg-switch-checked;
+    background-color:$color-bg-switch-checked;
+}
+.ivu-checkbox-checked .ivu-checkbox-inner{
+    border-color: $color-bg-switch-checked;
+    background-color:$color-bg-switch-checked;
+    border-radius:0;
+}
+.ivu-input{
+    border-radius:0;
+  }
 .ivu-layout.ivu-layout-has-sider>.ivu-layout, .ivu-layout.ivu-layout-has-sider>.ivu-layout-content{
     overflow-x: auto
 }
@@ -24,7 +39,6 @@
     overflow-x:visible;
     background-color: transparent;
 }
-
 .ivu-select-selection-focused, .ivu-select-selection:hover{
     border-color:#dcdee2
 }
@@ -41,6 +55,16 @@
 .ivu-input:focus,.ivu-input:hover{
     border-color:#dcdee2;
     box-shadow:none
+}
+button.ivu-btn-primary {
+    background: #0D9ECE;
+    border: 1px solid #0D9ECE;
+    border-radius: 0;
+    &:hover{
+        background: #0D9ECE;
+        border: 1px solid #0D9ECE;
+        opacity: .8;
+    }
 }
 /*滑块*/
 ::-webkit-scrollbar-thumb {

@@ -5,6 +5,9 @@
               :options="options"
               :clearable="false"
               :placeholder="placeholder"
+                         :disabled="disabled"
+              noOptionsText="暂无数据"
+              noResultsText="暂无数据"
             />
      <label class="title" for>{{title}}</label>
     </div>
@@ -24,6 +27,9 @@ export default {
         },
         required: {
             default: {}
+        },
+        disabled: {
+            default: false
         },
         value: {
             default: undefined

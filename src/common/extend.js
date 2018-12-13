@@ -1,5 +1,9 @@
 import Vue from 'vue'
 import http from '@/utils/http'
+import {
+    Modal,
+    Notice
+} from 'iview';
 Vue.prototype.$http = http
 
 Vue.prototype.$dateFormat = function (date,fmt)   { //author: meizz
@@ -19,4 +23,50 @@ Vue.prototype.$dateFormat = function (date,fmt)   { //author: meizz
             fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)));
     return fmt;
 }
+Vue.prototype.$Alert = {
+    success(desc,title = '信息'){
+        Notice.success({
+            title,
+            desc
+        })
+    },
+    warn(desc,title = '警告'){
+        Notice.warning({
+            title,
+            desc
+        })
+    },
+    info(desc,title = '提示'){
+        Notice.info({
+            title,
+            desc
+        })
+    },
+    error(desc,title = '错误'){
+        Notice.error({
+            title,
+            desc
+        })
+    },
+    confirm(obj){
+        return new Promise((resolve,reject)=>{
+            Modal.confirm({
+                title: obj.title || '提示',
+                content: obj.content || '',
+                okText: obj.okText || '确认',
+                cancelText: obj.cancelText || '取消',
+                onOk: ()=>{
+                    resolve()
+                },
+                onCancel: ()=>{
+                    reject({
+                        code: 'confirmCancel'
+                    })
+                }
+            })
+        })
+
+    }
+}
+
 

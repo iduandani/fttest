@@ -1,6 +1,11 @@
 @import '../base.scss';
 .pos-app-form {
+    overflow: visible;
     .pos-app-select {
+        .ivu-select-single .ivu-select-selection .ivu-select-placeholder, .ivu-select-single .ivu-select-selection .ivu-select-selected-value{
+            height: $height-form-control - 3;
+            line-height: $height-form-control - 3;
+        }
         &.required {
             label {
                 color: $color-form-required
@@ -13,7 +18,7 @@
         width: $width-form-control;
         height: $height-form-control;
         border: $border-form-control;
-        line-height: $height-form-control;
+        line-height: $height-form-control - 2;
         box-sizing: border-box;
         position: relative;
         label {
@@ -63,6 +68,9 @@
             box-sizing: border-box;
             padding-left: 22px;
         }
+        .vue-treeselect{
+            height: 38px;
+        }
         .vue-treeselect__control{
             height: 100%;
             border: none;
@@ -76,6 +84,7 @@
         }
         .vue-treeselect__placeholder, .vue-treeselect__single-value{
             line-height: 38px;
+            height: 38px;
         }
         
     }
@@ -187,4 +196,99 @@
             background-color: $color-bg-form-label;
         }
     }
+    .pos-app-table{
+        margin-top: 0;
+        .ivu-table{
+            overflow-x: visible;
+        }
+        .ivu-input{
+          border-radius: 0
+        }
+        .ivu-switch-checked{
+            border-color: $color-bg-switch-checked;
+            background-color:$color-bg-switch-checked;
+        }
+        .ivu-checkbox-inner{
+            margin-right: 0;
+        }
+        .ivu-select-selection{
+            border-radius: 0;
+        }
+    }
+    .pos-form-table-add{
+        clear: both;
+        height: 40px;
+        line-height: 40px;
+        border:1px dashed #0D9ECE;
+        text-align: center;
+        vertical-align: middle;
+        color: #0D9ECE;
+        cursor: pointer;
+        font-size: 14px;
+        img{
+            vertical-align: middle;
+            margin-right: 5px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .pos-form-table-sub{
+        position: absolute;
+        right: -36px;
+        width: 20px;
+        height: 20px;
+    }
+    .pos-form-sub-tips{
+        height: 40px;
+        line-height: 40px;
+        clear: both;
+        width: 400px;
+        margin: 20px 0;
+        padding: 0 7px 0 26px;
+        border:1px solid #E5E5E5;
+    }
+    .sub-tips-right{
+        float: right;
+    }
+    .pos-form-table-container{
+        float: left;
+    }
+    .pos-form-table-header{
+        height: 38px;
+        line-height:38px;
+        font-size: 14px;
+        margin-bottom: 7px;
+        .ivu-input-wrapper{
+          width:220px;
+        }
+        .ivu-input{
+            border-radius:0;
+          }
+          .seq{
+              margin-right: 10px;
+              background: #0D9ECE;
+              display: inline-block;
+              vertical-align: middle;
+              width: 20px;
+              height: 20px;
+              line-height: 20px;
+              text-align: center;
+              color: #fff;
+              border-radius: 100%;
+          }
+          .title{
+              margin-right: 10px;
+              color: #000;
+              font-weight: 600;
+          }
+          .count{
+              margin-left: 30px;
+              color: #0D9ECE;
+              margin-right: 10px;
+          }
+          .count-input{
+              margin-left: 10px;
+              width: 80px;
+          }
+      }
 }

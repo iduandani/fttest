@@ -1,7 +1,7 @@
 <template>
   <div class="pos-app-switch">
     <label :class="{required:required}">{{title}}</label>
-    <i-switch v-model="modelVal"></i-switch>
+    <i-switch :disabled="disabled" v-model="modelVal"></i-switch>
   </div>
 </template>
 <script>
@@ -12,6 +12,9 @@ export default {
         required: {
             default: false
         },
+        disabled: {
+            default: false
+        }
     },
     data(){
         return {

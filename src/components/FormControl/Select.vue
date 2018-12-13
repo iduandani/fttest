@@ -1,6 +1,6 @@
 <template>
   <div class="pos-app-select" :class="{required:required}">
-    <Select v-model="modelVal" :placeholder="placeholder">
+    <Select v-model="modelVal" :placeholder="placeholder" @on-change="change" :disabled="disabled">
       <Option v-for="(opt,index) in options" :key="index" :value="opt.value">{{opt.name}}</Option>
     </Select>
     <label for>{{title}}</label>
@@ -19,6 +19,9 @@ export default {
                 return []
             }
         },
+        disabled: {
+            default: false
+        },
         placeholder: {}
     },
     data(){
@@ -34,6 +37,11 @@ export default {
             set(val){
                 this.$emit('input',val)
             }
+        }
+    },
+    methods: {
+        change(data){
+            this.$emit('change',data)
         }
     }
 }

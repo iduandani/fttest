@@ -14,6 +14,13 @@ instence.interceptors.response.use(function (response) {
     return response.data;
 }, function (error) {
     // Do something with response error
-    return Promise.reject(error);
+    if (error.response){
+        return Promise.reject(error.response.data);
+    } else {
+        return Promise.reject({
+            message: '服务器没有响应'
+        });
+    }
+
 });
 export default instence
